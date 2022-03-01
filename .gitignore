@@ -1,0 +1,9 @@
+TODO.txt
+gitupdate.ps1
+.netrwhist
+junkyard
+attic/
+plugged/
+plugin/packer_compiled.lua
+plugin/Fold.nvim
+plugin/SesMan.nvim
