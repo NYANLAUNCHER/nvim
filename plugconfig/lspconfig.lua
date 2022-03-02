@@ -83,7 +83,7 @@ else
   print("Unsupported system for sumneko")
 end
 
-local sumneko_root_path = '/Users/purce/LanguageConfig/Lua/lua-language-server'
+local sumneko_root_path = '~/dev/external/lua-language-server'
 local sumneko_binary = sumneko_root_path.."/bin/Windows/lua-language-server"
 
 local runtime_path = vim.split(package.path, ';')

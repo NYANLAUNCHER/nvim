@@ -1,0 +1,90 @@
+local fn = vim.fn
+local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+if fn.empty(fn.glob(install_path)) > 0 then
+  packer_bootstrap = fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+end
+
+return require('packer').startup(function(use)
+  -- Start Screen
+  use 'mhinz/vim-startify'
+
+  -- Colorscheme
+  use 'gruvbox-community/gruvbox'
+  use 'shinchu/lightline-gruvbox.vim' --gruvbox for lightline
+
+  -- Status Line
+  use 'nvim-lualine/lualine.nvim'
+  --use 'hoob3rt/lualine.nvim'
+  use 'rebelot/heirline.nvim'
+
+  -- Window Management
+  use 'szw/vim-maximizer'
+
+  -- Look Nice
+  use 'Yggdroot/indentLine'
+  use 'ryanoasis/vim-devicons'
+
+  -- File Navigation
+  use 'preservim/nerdtree'
+  use 'nvim-lua/popup.nvim'
+  use 'nvim-lua/plenary.nvim'
+  use 'nvim-telescope/telescope.nvim'
+  use 'nvim-telescope/telescope-fzy-native.nvim'
+  use 'derekwyatt/vim-fswitch' --Toggle .h and .cpp
+
+  -- Movement
+  use 'justinmk/vim-sneak'
+  use 'unblevable/quick-scope'
+
+  -- Language/Completion
+  use 'dhruvasagar/vim-dotoo'
+  use 'neovim/nvim-lspconfig'
+  use 'glepnir/lspsaga.nvim'
+  use 'mfussenegger/nvim-jdtls'
+  use 'fladson/vim-kitty'
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate'
+  }
+  use 'nvim-treesitter/playground'
+  use 'plasticboy/vim-markdown'
+  use 'm-pilia/vim-ccls'
+
+   -- Cmp
+  use 'hrsh7th/nvim-cmp'
+  use 'hrsh7th/cmp-buffer'
+  use 'hrsh7th/cmp-path'
+  use 'hrsh7th/cmp-nvim-lsp'
+  use 'hrsh7th/cmp-nvim-lua'
+  use 'lukas-reineke/cmp-rg'
+  use {
+    'tzachar/cmp-tabnine',
+    run = './install.sh'
+  }
+  --use 'tzachar/cmp-tabnine', { 'do': './install.sh' }
+
+  use 'tpope/vim-surround'
+  --use 'windwp/nvim-autopairs'
+  use 'jiangmiao/auto-pairs'
+  use 'alvan/vim-closetag'
+
+  -- Debugging
+  use 'mfussenegger/nvim-dap' -- :h dap.txt
+  use 'nvim-telescope/telescope-dap.nvim' -- :h dap.txt
+
+  -- GIT
+  use 'mhinz/vim-signify'
+  use 'tpope/vim-fugitive'
+  use 'tpope/vim-rhubarb'
+  use 'junegunn/gv.vim'
+
+  -- UE development
+  use 'drichardson/vim-unreal'
+
+  -- Misc
+  use 'romainl/vim-cool'
+
+  if packer_bootstrap then
+    require('packer').sync()
+  end
+end)
