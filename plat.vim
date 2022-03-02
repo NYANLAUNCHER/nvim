@@ -13,19 +13,15 @@ endif
 if g:os == "linux"
     let g:vimhome = "~/.config/nvim/"
 elseif g:os == "windows"
-    let g:vimhome = "~/AppData/Local/nvim"
+    let g:vimhome = "~/AppData/Local/nvim/"
 else
     let g:vimhome = "~/.config/nvim/"
 endif
 
 if g:os == "linux"
-    let g:vimdata = "~/.local/share/nvim"
+    let g:vimdata = "~/.local/share/nvim/"
 elseif g:os == "windows"
-    let g:vimdata = "~/AppData/Local/nvim-data"
+    let g:vimdata = "~/AppData/Local/nvim-data/"
 else
-    let g:vimdata = "~/.local/share/nvim"
+    let g:vimdata = "~/.local/share/nvim/"
 endif
-
-echo g:os
-echo g:vimhome
-echo g:vimdata
