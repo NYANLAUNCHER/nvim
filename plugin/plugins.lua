@@ -83,6 +83,7 @@ return require('packer').startup(function(use)
 
   -- Misc
   use 'romainl/vim-cool'
+  use 'tpope/vim-eunuch'
 
   if packer_bootstrap then
     require('packer').sync()

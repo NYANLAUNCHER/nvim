@@ -9,16 +9,23 @@ cnoremap <C-;> <C-[>
 tnoremap <C-;> <C-[>
 
 " move in insert mode
-"inoremap <C-h> <C-o>h
-"inoremap <C-j> <C-o>j
-"inoremap <C-k> <C-o>k
-"inoremap <C-l> <C-o>l
+inoremap <C-h> <Left>
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+inoremap <C-l> <Right>
 
 inoremap <C-BS> <C-w>
 
 " Scroll Buffer
-nnoremap <silent> <C-j> <C-e>
-nnoremap <silent> <C-k> <C-y>
+unmap <S-k>
+nnoremap <silent> <S-j> <C-e>
+nnoremap <silent> <S-k> <C-y>
+
+" Change Windows
+nnoremap <silent> <C-h> <C-w>h
+nnoremap <silent> <C-j> <C-w>j
+nnoremap <silent> <C-k> <C-w>k
+nnoremap <silent> <C-l> <C-w>l
 
 " Left/Right does trigger completion in cmd
 cnoremap <Left> <Space><BS><Left>
