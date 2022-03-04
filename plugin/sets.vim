@@ -1,7 +1,4 @@
 
-
-
-
 " General Sets
 syntax on
 filetype plugin indent on
@@ -11,11 +8,7 @@ set shortmess=a
 set encoding=UTF-8
 "colorscheme gruvbox ctermfg=#999999
 
-"set shell=powershell
-"set shellcmdflag=-command
 set noerrorbells
-
-setlocal spell spelllang=en_us
 
 set guicursor=a:block
 "set nocursorline
@@ -54,7 +47,7 @@ set autoread
 set noswapfile
 set nobackup
 set nowritebackup
-"set undodir= "~/.local/share/nvim/undo/"
+set undodir= "~/.local/share/nvim/undo/"
 set undofile
 
 " General Lets

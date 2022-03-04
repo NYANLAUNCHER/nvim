@@ -8,8 +8,8 @@ au BufEnter *.c let b:fswitchdst = "h"
 au BufEnter *.h let b:fswitchdst = 'c' | let b:fswitchlocs = 'reg:|include.*|src/**|'
 
 " mappings
-nnoremap <silent> <S-h>f :FSHere<cr>
-nnoremap <silent> <S-h>h :FSSplitLeft<cr>
-nnoremap <silent> <S-h>j :FSSplitBelow<cr>
-nnoremap <silent> <S-h>k :FSSplitAbove<cr>
-nnoremap <silent> <S-h>l :FSSplitRight<cr>
+nnoremap <silent> <C-f>f :FSHere<cr>
+nnoremap <silent> <C-f>h :FSSplitLeft<cr>
+nnoremap <silent> <C-f>j :FSSplitBelow<cr>
+nnoremap <silent> <C-f>k :FSSplitAbove<cr>
+nnoremap <silent> <C-f>l :FSSplitRight<cr>
