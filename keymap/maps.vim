@@ -17,19 +17,14 @@ inoremap <C-l> <Right>
 inoremap <C-BS> <C-w>
 
 " Scroll Buffer
-unmap <S-k>
-nnoremap <silent> <S-j> <C-e>
-nnoremap <silent> <S-k> <C-y>
+nnoremap <S-j> <C-e>
+nnoremap <S-k> <C-y>
 
 " Change Windows
 nnoremap <silent> <C-h> <C-w>h
 nnoremap <silent> <C-j> <C-w>j
 nnoremap <silent> <C-k> <C-w>k
 nnoremap <silent> <C-l> <C-w>l
-
-" Left/Right does trigger completion in cmd
-cnoremap <Left> <Space><BS><Left>
-cnoremap <Right> <Space><BS><Right>
 
 " Y/C Yank/Change to end of line
 nnoremap Y y$
