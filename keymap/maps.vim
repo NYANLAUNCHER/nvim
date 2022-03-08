@@ -26,6 +26,13 @@ nnoremap <silent> <C-j> <C-w>j
 nnoremap <silent> <C-k> <C-w>k
 nnoremap <silent> <C-l> <C-w>l
 
+" Make Windows
+"nnoremap <C-w>h
+"set splitbelow splitright
+"nnoremap <C-w>j <Cmd>"set splitbelow | vs "
+"nnoremap <C-w>k
+"nnoremap <C-w>l <Cmd>"set splitright | split "
+
 " Y/C Yank/Change to end of line
 nnoremap Y y$
 nnoremap C c$
