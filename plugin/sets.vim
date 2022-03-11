@@ -51,7 +51,7 @@ set undodir= "~/.local/share/nvim/undo/"
 set undofile
 
 " General Lets
-let NERDTreeIgnore=[]
+let g:markdown_folding = 0
 let g:vimsyn_folding = 0
 let g:vim_json_warnings = 0
 let g:vim_json_conceal = 0

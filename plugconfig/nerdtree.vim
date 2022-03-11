@@ -1,5 +1,5 @@
 
-nnoremap <S-n> <Cmd>NERDTreeToggle<CR>
+nnoremap <S-n> <Cmd>NERDTreeToggle .<CR>
 let NERDTreeIgnore=[]
 
 let g:NERDTreeDirArrowExpandable = '▸'

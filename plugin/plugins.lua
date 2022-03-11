@@ -49,6 +49,7 @@ return require('packer').startup(function(use)
   use 'nvim-treesitter/playground'
   use 'plasticboy/vim-markdown'
   use 'm-pilia/vim-ccls'
+  use 'habamax/vim-godot'
 
    -- Cmp
   use 'hrsh7th/nvim-cmp'

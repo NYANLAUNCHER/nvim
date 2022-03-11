@@ -100,9 +100,16 @@ require'lspconfig'.sumneko_lua.setup {
   },
 }
 
-require'lspconfig'.verible.setup{}
+require('lspconfig').gdscript.setup{
+  on_attach = on_attach,
+  flags = {
+    debounce_text_changes = 150,
+  }
+}
 
 require'lspconfig'.vimls.setup{--[[Code Goes Here]]}
+
+require'lspconfig'.verible.setup{}
 
 require'lspconfig'.powershell_es.setup{
   bundle_path = '~/LanguageConfig/Powershell/PowerShellEditorServices',
