@@ -29,8 +29,8 @@ ru plugconfig/treesitter.lua
 
 "  File Navigation
 ru plugconfig/telescope.lua
-"ru plugconfig/nerdtree.vim
-ru plugconfig/fswitch.vim
+ru plugconfig/nvim-tree.lua
+"ru plugconfig/fswitch.vim
 
 "  Debugging
 "ru plugconfig/dap.vim " :h dap.txt

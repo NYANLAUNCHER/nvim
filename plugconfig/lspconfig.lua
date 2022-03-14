@@ -100,12 +100,7 @@ require'lspconfig'.sumneko_lua.setup {
   },
 }
 
-require('lspconfig').gdscript.setup{
-  on_attach = on_attach,
-  flags = {
-    debounce_text_changes = 150,
-  }
-}
+require('lspconfig').gdscript.setup{}
 
 require'lspconfig'.vimls.setup{--[[Code Goes Here]]}
 

@@ -25,7 +25,14 @@ return require('packer').startup(function(use)
   use 'ryanoasis/vim-devicons'
 
   -- File Navigation
-  use 'preservim/nerdtree'
+  --use 'preservim/nerdtree'
+  use {
+      'kyazdani42/nvim-tree.lua',
+      requires = {
+        'kyazdani42/nvim-web-devicons', -- optional, for file icon
+      },
+      config = function() require'nvim-tree'.setup {} end
+  }
   use 'nvim-lua/popup.nvim'
   use 'nvim-lua/plenary.nvim'
   use 'nvim-telescope/telescope.nvim'
