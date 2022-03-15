@@ -1,11 +1,11 @@
 
 " General Init
-ru plugin/plugins.vim
 ru plugin/sets.vim
 ru keymap/maps.lua
+ru plugin/plugins.vim
+ru gruvbox.vim
 ru plugin/auGroups.vim
 ru plugin/func.vim
-ru gruvbox.vim
 
 " Plug Config
 "  Looks

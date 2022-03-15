@@ -4,6 +4,7 @@
 " set Color Scheme
 colorscheme gruvbox
 highlight Normal guibg=none
+highlight NonText guibg=none
 set bg=dark
 
 " {{{
