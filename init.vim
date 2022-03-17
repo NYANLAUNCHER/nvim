@@ -23,6 +23,7 @@ ru plugconfig/jmautopairs.vim
 
 "  Language/Completion
 ru plugconfig/lspconfig.lua
+ru plugconfig/nvim-jdtls.lua
 ru plugconfig/cmp.lua
 ru plugconfig/treesitter.lua
 "ru plugconfig/emmet.vim
