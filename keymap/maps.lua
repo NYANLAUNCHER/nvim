@@ -25,6 +25,9 @@ map("i", "<C-l>", "<Right>")
 
 map("i", "<C-BS>", "<C-w>")
 
+-- Surround
+map("n", "yS", "ys$")
+
 -- Scroll Buffer
 map("n", "<S-j>", "<C-e>")
 map("n", "<S-k>", "<C-y>")
