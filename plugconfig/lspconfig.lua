@@ -102,15 +102,11 @@ require'lspconfig'.sumneko_lua.setup {
   },
 }
 
-require('lspconfig').gdscript.setup{}
+require'lspconfig'.gdscript.setup{}
 
 require'lspconfig'.vimls.setup{--[[Code Goes Here]]}
 
 require'lspconfig'.verible.setup{}
-
-require'lspconfig'.powershell_es.setup{
-  bundle_path = '~/LanguageConfig/Powershell/PowerShellEditorServices',
-}
 
 require'lspconfig'.csharp_ls.setup{--[[Code Goes Here]]}
 
