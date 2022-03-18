@@ -88,10 +88,6 @@ require'lspconfig'.sumneko_lua.setup {
         -- Get the language server to recognize the `vim` global
         globals = {
           'vim',
-          'awesome',
-          'client',
-          'screen',
-          'root',
         },
       },
       workspace = {
