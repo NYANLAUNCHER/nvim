@@ -4,6 +4,7 @@ let b:AutoPairs = g:AutoPairs
 
 au FileType html let b:AutoPairs = {'(':')', '[':']', '{':'}',"'":"'",'"':'"', "`":"`", '```':'```', '"""':'"""', "'''":"'''"}
 au FileType json let b:AutoPairs = {'(':')', '[':']', '{':'}',"'":"'",'"':'"', "`":"`"}
+au FileType lisp let g:AutoPairs = {'(':')', '[':']', '{':'}','"':'"', "`":"`", '```':'```', '"""':'"""', "'''":"'''"}
 
 au FileType help let b:AutoPairs = {}
 au FileType telescope let b:AutoPairs = {}

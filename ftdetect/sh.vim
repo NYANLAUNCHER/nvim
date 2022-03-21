@@ -1,2 +1,2 @@
 
-autocmd BufRead,BufNewFile lfrc set filetype=sh
+autocmd BufRead,BufNewFile lfrc,xinitrc set filetype=sh
