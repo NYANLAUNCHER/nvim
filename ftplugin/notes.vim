@@ -28,8 +28,8 @@ set nowrap
 set noswapfile
 set nobackup
 set nowritebackup
-set undodir=~/AppData/Local/nvim-data/undodir
-set undofile
+""set undodir=~/AppData/Local/nvim-data/undodir
+""set undofile
 set hidden
 set nohlsearch
 set incsearch
