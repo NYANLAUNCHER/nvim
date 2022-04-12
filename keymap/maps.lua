@@ -31,6 +31,8 @@ map("n", "yS", "ys$")
 -- Scroll Buffer
 map("n", "<S-j>", "<C-e>")
 map("n", "<S-k>", "<C-y>")
+--map("n", "<S-j>", "<Down>zz")
+--map("n", "<S-k>", "<Up>zz")
 
 -- Change Windows
 map("n", "<C-h>", "<C-w>h", {silent = true})
