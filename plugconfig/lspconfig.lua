@@ -56,7 +56,7 @@ local util = require'lspconfig/util'
 require'lspconfig'.ccls.setup{
   cmd = { "ccls" },
   filetypes = { "c", "cpp", "objc", "objcpp" },
-  root_dir = util.root_pattern("compile_commands.json", ".ccls", "compile_flags.txt"),
+  root_dir = util.root_pattern(".git", "compile_commands.json", ".ccls", "compile_flags.txt"),
 }
 
 --require'lspconfig'.clangd.setup{}
