@@ -56,17 +56,24 @@ local util = require'lspconfig/util'
 require'lspconfig'.ccls.setup{
   cmd = { "ccls" },
   filetypes = { "c", "cpp", "objc", "objcpp" },
-  root_dir = util.root_pattern(".git", "compile_commands.json", ".ccls", "compile_flags.txt"),
+  root_dir = util.root_pattern(".ccls", "compile_commands.json", "compile_flags.txt", ".git", "src", "include"),
 }
 
---require'lspconfig'.clangd.setup{}
-
-require'lspconfig'.rls.setup{
+require'lspconfig'.rust_analyzer.setup{
+  on_attach=on_attach,
+  root_dir = util.root_pattern("Cargo.toml", "rust-project.json", ".git", "src", "include"),
   settings = {
-    rust = {
-      unstable_features = true,
-      build_on_save = false,
-      all_features = true,
+    ["rust-analyzer"] = {
+      assist = {
+        importGranularity = "module",
+        importPrefix = "self",
+      },
+      cargo = {
+        loadOutDirsFromCheck = true
+      },
+      procMacro = {
+        enable = true
+      },
     },
   },
 }
