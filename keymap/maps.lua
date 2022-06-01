@@ -73,4 +73,7 @@ map("v", "<leader>P", "\"+P")
 
 -- Terminal Commands
 map("t", "<C-[>", "<C-\\><C-n>")
+vim.cmd([[
+tnoremap <C-[> <C-\\><C-n>
+]])
 
