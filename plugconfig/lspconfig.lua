@@ -78,6 +78,8 @@ require'lspconfig'.rust_analyzer.setup{
   },
 }
 
+require'lspconfig'.gopls.setup{}
+
 local runtime_path = vim.split(package.path, ';')
 table.insert(runtime_path, "lua/?.lua")
 table.insert(runtime_path, "lua/?/init.lua")
@@ -127,7 +129,7 @@ require'lspconfig'.bashls.setup{}
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { 'ccls', 'rls', 'vimls', 'csharp_ls', 'tsserver', 'pyright' }
+local servers = { 'ccls', 'rls', 'vimls', 'sumneko_lua', 'gopls', 'pyright' }
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
     on_attach = on_attach,
