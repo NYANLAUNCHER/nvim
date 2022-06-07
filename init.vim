@@ -20,6 +20,7 @@ ru plugconfig/sneak.vim
 ru plugconfig/quickscope.vim
 "ru plugconfig/autopairs.lua
 ru plugconfig/jmautopairs.vim
+ru plugconfig/hexedit.vim
 
 "  Language/Completion
 ru plugconfig/lspconfig.lua
