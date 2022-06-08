@@ -36,7 +36,6 @@ del .git, .gitignore
 ./
 ├─ colors/ color schemes
 ├─ compiler/ compiler configs
-├─ doc/ documentation
 ├─ ftdetect/ detect filetypes
 ├─ ftplugin/ filetype configs
 ├─ keymap/ keymaps
