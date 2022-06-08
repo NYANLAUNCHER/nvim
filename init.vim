@@ -1,38 +1,39 @@
 
 " General Init
-ru plugin/sets.vim
-ru keymap/maps.lua
-ru plugin/plugins.vim
+ru cfg/sets.vim
+ru cfg/keymaps.lua
+ru cfg/plugins.vim
+ru cfg/auGroups.vim
+ru cfg/func.vim
 ru gruvbox.vim
-ru plugin/auGroups.vim
-ru plugin/func.vim
+"colo gruvbox
 
 " Plug Config
 "  Looks
-ru plugconfig/lualine.lua
-"ru plugconfig/heirline.lua "source: https://github.com/rebelot/heirline.nvim"
-ru plugconfig/signify.vim
-ru plugconfig/startify.vim
+ru plugcfg/lualine.lua
+"ru plugcfg/heirline.lua "source: https://github.com/rebelot/heirline.nvim"
+ru plugcfg/signify.vim
+ru plugcfg/startify.vim
 
 "  Misc
-ru plugconfig/maximizer.vim
-ru plugconfig/sneak.vim
-ru plugconfig/quickscope.vim
-"ru plugconfig/autopairs.lua
-ru plugconfig/jmautopairs.vim
-ru plugconfig/hexedit.vim
+ru plugcfg/maximizer.vim
+ru plugcfg/sneak.vim
+ru plugcfg/quickscope.vim
+"ru plugcfg/autopairs.lua
+ru plugcfg/jmautopairs.vim
+ru plugcfg/hexedit.vim
 
 "  Language/Completion
-ru plugconfig/lspconfig.lua
-"ru plugconfig/nvim-jdtls.lua
-ru plugconfig/cmp.lua
-ru plugconfig/treesitter.lua
-"ru plugconfig/emmet.vim
+ru plugcfg/lspconfig.lua
+"ru plugcfg/nvim-jdtls.lua
+ru plugcfg/cmp.lua
+""ru plugcfg/treesitter.lua
+"ru plugcfg/emmet.vim
 
 "  File Navigation
-ru plugconfig/telescope.lua
-ru plugconfig/nvim-tree.lua
-"ru plugconfig/fswitch.vim
+ru plugcfg/telescope.lua
+ru plugcfg/nvim-tree.lua
+"ru plugcfg/fswitch.vim
 
 "  Debugging
-"ru plugconfig/dap.vim " :h dap.txt
+"ru plugcfg/dap.vim " :h dap.txt

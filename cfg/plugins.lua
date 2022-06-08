@@ -4,7 +4,7 @@ if fn.empty(fn.glob(install_path)) > 0 then
   packer_bootstrap = fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
 end
 
-return require('packer').startup(function(use)
+return require('packer').startup(function(use) use 'https://github.com/wbthomason/packer.nvim'
   -- Start Screen
   use 'mhinz/vim-startify'
 
@@ -43,17 +43,22 @@ return require('packer').startup(function(use)
   use 'justinmk/vim-sneak'
   use 'unblevable/quick-scope'
 
-  -- Language/Completion
-  use 'dhruvasagar/vim-dotoo'
+  -- Language Stuff
   use 'neovim/nvim-lspconfig'
-  use 'glepnir/lspsaga.nvim'
+  -- "https://github.com/autozimu/LanguageClient-neovim#quick-start"
+  use 'autozimu/LanguageClient-neovim'
   use 'mfussenegger/nvim-jdtls'
+  use 'glepnir/lspsaga.nvim'
+  --use {
+  --  'nvim-treesitter/nvim-treesitter',
+  --  requires = {
+  --    'nvim-treesitter/playground'
+  --  }
+  --  -- use this to update ts languages
+  --  --run = ':TSUpdate'
+  --}
   use 'fladson/vim-kitty'
-  use {
-    'nvim-treesitter/nvim-treesitter',
-    run = ':TSUpdate'
-  }
-  use 'nvim-treesitter/playground'
+  use 'dhruvasagar/vim-dotoo'
   use 'plasticboy/vim-markdown'
   use 'm-pilia/vim-ccls'
   use 'habamax/vim-godot'
@@ -85,9 +90,6 @@ return require('packer').startup(function(use)
   use 'tpope/vim-fugitive'
   use 'tpope/vim-rhubarb'
   use 'junegunn/gv.vim'
-
-  -- UE development
-  use 'drichardson/vim-unreal'
 
   -- Misc
   use 'romainl/vim-cool'

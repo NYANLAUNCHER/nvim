@@ -30,3 +30,21 @@ Run this in the repo's root dir.
 ```
 del .git, .gitignore
 ```
+
+## Directories
+<pre>
+./
+├─ colors/ color schemes
+├─ compiler/ compiler configs
+├─ doc/ documentation
+├─ ftdetect/ detect filetypes
+├─ ftplugin/ filetype configs
+├─ keymap/ keymaps
+├─ cfg/ main|base configs
+├─ plugcfg/ plugin configs
+├─ lua/ lua modules
+├─ spell/ spell checking
+├─ syntax/ syntax highlighting
+├─ scripts/ sh scripts
+└─ init.vim, source configs
+</pre>

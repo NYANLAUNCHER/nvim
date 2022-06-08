@@ -7,7 +7,7 @@ fun HexSave()
 endfun
 
 " helper function to toggle hex mode
-function HexToggle(state="", args="")
+fun HexToggle(state="", args="")
   " hex mode should be considered a read-only operation
   " save values for modified and read-only for restoration later,
   " and clear the read-only flag for now
@@ -44,4 +44,4 @@ function HexToggle(state="", args="")
   let &mod=l:modified
   let &readonly=l:oldreadonly
   let &modifiable=l:oldmodifiable
-endfunction
+endfun
