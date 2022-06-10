@@ -23,11 +23,11 @@ ru plugcfg/quickscope.vim
 ru plugcfg/jmautopairs.vim
 ru plugcfg/hexedit.vim
 
-"  Language/Completion
+"  Language Stuff
 ru plugcfg/lspconfig.lua
-"ru plugcfg/nvim-jdtls.lua
+ru plugcfg/treesitter.lua
 ru plugcfg/cmp.lua
-""ru plugcfg/treesitter.lua
+"ru plugcfg/nvim-jdtls.lua
 "ru plugcfg/emmet.vim
 
 "  File Navigation

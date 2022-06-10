@@ -69,11 +69,6 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
-  ["LanguageClient-neovim"] = {
-    loaded = true,
-    path = "/home/markiep/.local/share/nvim/site/pack/packer/start/LanguageClient-neovim",
-    url = "https://github.com/autozimu/LanguageClient-neovim"
-  },
   ["auto-pairs"] = {
     loaded = true,
     path = "/home/markiep/.local/share/nvim/site/pack/packer/start/auto-pairs",
@@ -179,6 +174,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/markiep/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
+  },
+  ["packer.nvim"] = {
+    loaded = true,
+    path = "/home/markiep/.local/share/nvim/site/pack/packer/start/packer.nvim",
+    url = "https://github.com/wbthomason/packer.nvim"
   },
   playground = {
     loaded = true,
@@ -299,11 +299,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/markiep/.local/share/nvim/site/pack/packer/start/vim-surround",
     url = "https://github.com/tpope/vim-surround"
-  },
-  ["vim-unreal"] = {
-    loaded = true,
-    path = "/home/markiep/.local/share/nvim/site/pack/packer/start/vim-unreal",
-    url = "https://github.com/drichardson/vim-unreal"
   }
 }
 

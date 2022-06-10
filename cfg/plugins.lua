@@ -1,10 +1,16 @@
+local packer = require('packer')
 local fn = vim.fn
 local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
 if fn.empty(fn.glob(install_path)) > 0 then
   packer_bootstrap = fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
 end
 
-return require('packer').startup(function(use) use 'https://github.com/wbthomason/packer.nvim'
+packer.init({
+  compile_path = vim.fn.stdpath('config')..'/cfg/packer_compiled.lua',
+})
+
+return packer.startup(function(use)
+  use 'wbthomason/packer.nvim'
   -- Start Screen
   use 'mhinz/vim-startify'
 
@@ -27,11 +33,11 @@ return require('packer').startup(function(use) use 'https://github.com/wbthomaso
   -- File Navigation
   --use 'preservim/nerdtree'
   use {
-      'kyazdani42/nvim-tree.lua',
-      requires = {
-        'kyazdani42/nvim-web-devicons', -- optional, for file icon
-      },
-      config = function() require'nvim-tree'.setup {} end
+    'kyazdani42/nvim-tree.lua',
+    requires = {
+      'kyazdani42/nvim-web-devicons', -- optional, for file icon
+    },
+    config = function() require'nvim-tree'.setup {} end
   }
   use 'nvim-lua/popup.nvim'
   use 'nvim-lua/plenary.nvim'
@@ -46,17 +52,17 @@ return require('packer').startup(function(use) use 'https://github.com/wbthomaso
   -- Language Stuff
   use 'neovim/nvim-lspconfig'
   -- "https://github.com/autozimu/LanguageClient-neovim#quick-start"
-  use 'autozimu/LanguageClient-neovim'
+  --use 'autozimu/LanguageClient-neovim'
   use 'mfussenegger/nvim-jdtls'
   use 'glepnir/lspsaga.nvim'
-  --use {
-  --  'nvim-treesitter/nvim-treesitter',
-  --  requires = {
-  --    'nvim-treesitter/playground'
-  --  }
-  --  -- use this to update ts languages
-  --  --run = ':TSUpdate'
-  --}
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    requires = {
+      'nvim-treesitter/playground'
+    },
+    -- use this to update TS languages
+    --run = ':TSUpdate'
+  }
   use 'fladson/vim-kitty'
   use 'dhruvasagar/vim-dotoo'
   use 'plasticboy/vim-markdown'
