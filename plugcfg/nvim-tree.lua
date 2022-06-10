@@ -1,13 +1,13 @@
 
--- following options are the default
--- each of these are documented in `:help nvim-tree.OPTION_NAME`
+-- each of these are documented in `:h nvim-tree.OPTION_NAME`
+-- nested options are documented by accessing them with `.` (eg: `:h nvim-tree.view.mappings.list`).
 require'nvim-tree'.setup {
   disable_netrw        = false,
   hijack_netrw         = true,
   open_on_setup        = false,
   ignore_buffer_on_setup = false,
   ignore_ft_on_setup   = {},
-  auto_close           = false,
+  --auto_close           = false,
   auto_reload_on_write = true,
   open_on_tab          = false,
   hijack_cursor        = false,
@@ -89,10 +89,22 @@ require'nvim-tree'.setup {
     },
   },
 }
+require('keymap')
 
+-- Keymaps
+--map("n", "<C-n>", ":NvimTreeToggle<CR>")
+--map("n", "<leader>r", ":NvimTreeRefresh<CR>")
+--map("n", "<leader>n", ":NvimTreeFindFile<CR>")
+--" More available functions:
+--" NvimTreeOpen
+--" NvimTreeClose
+--" NvimTreeFocus
+--" NvimTreeFindFileToggle
+--" NvimTreeResize
+--" NvimTreeCollapse
+--" NvimTreeCollapseKeepBuffers
 
-
--- default mappings
+-- maps when using nvim-tree
 local list = {
   { key = {"<CR>", "o", "<2-LeftMouse>"}, action = "edit" },
   { key = "<C-e>",                        action = "edit_in_place" },

@@ -1,0 +1,4 @@
+
+- TODO:
+  - create keymaps for "plugcfg/nvim-tree.lua"
+  - port init.vim to init.lua

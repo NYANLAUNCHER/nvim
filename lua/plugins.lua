@@ -1,1 +1,0 @@
-../cfg/plugins.lua

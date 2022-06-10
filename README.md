@@ -38,7 +38,6 @@ del .git, .gitignore
 ├─ compiler/ compiler configs
 ├─ ftdetect/ detect filetypes
 ├─ ftplugin/ filetype configs
-├─ keymap/ keymaps
 ├─ cfg/ main|base configs
 ├─ plugcfg/ plugin configs
 ├─ lua/ lua modules

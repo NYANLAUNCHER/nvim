@@ -1,21 +1,10 @@
-
-function map(mode, lhs, rhs, opts)
-  local options = { noremap = true }
-  if opts then
-    options = vim.tbl_extend("force", options, opts)
-  end
-  vim.api.nvim_set_keymap(mode, lhs, rhs, options)
-end
+require('keymap')
 
 -- Semicolon for command mode
-map("n", ";", ":")
-map("v", ";", ":")
+map({"n", "v"}, ";", ":")
 
 -- <C-;> to <ESC>
-map("i", "<C-;>", "<ESC>")
-map("v", "<C-;>", "<ESC>")
-map("c", "<C-;>", "<ESC>")
-map("t", "<C-;>", "<ESC>")
+map({"i", "v", "c", "t"}, "<C-;>", "<C-[>")
 
 -- move in insert mode
 map("i", "<C-h>", "<Left>")
@@ -23,16 +12,12 @@ map("i", "<C-j>", "<Down>")
 map("i", "<C-k>", "<Up>")
 map("i", "<C-l>", "<Right>")
 
-map("i", "<C-BS>", "<C-w>")
-
 -- Surround
 map("n", "yS", "ys$")
 
 -- Scroll Buffer
 map("n", "<S-j>", "<C-e>")
 map("n", "<S-k>", "<C-y>")
---map("n", "<S-j>", "<Down>zz")
---map("n", "<S-k>", "<Up>zz")
 
 -- Change Windows
 map("n", "<C-h>", "<C-w>h", {silent = true})
@@ -55,9 +40,9 @@ map("n", "<leader>y", "\"+yg_")
 
 -- Paste from sys_clipboard
 map("n", "<leader>p", "\"+p")
-map("n", "<leader>P", "\"+P")
 map("v", "<leader>p", "\"+p")
-map("v", "<leader>P", "\"+P")
+map("n", "<leader>P", "\"+P")
+map("n", "<leader>P", "\"+P")
 
 -- Compile & Run cmds
 --nnoremap <C-b>  <Cmd>call Compile() <Bar> call Run()<Cr> "build and run
@@ -72,8 +57,5 @@ map("v", "<leader>P", "\"+P")
 --nnoremap <leader>gi'
 
 -- Terminal Commands
-map("t", "<C-[>", "<C-\\><C-n>")
-vim.cmd([[
-tnoremap <C-[> <C-\\><C-n>
-]])
+map("t", "<C-[>", "<C-\\>n")
 
