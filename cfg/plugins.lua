@@ -50,6 +50,7 @@ return packer.startup(function(use)
   use 'unblevable/quick-scope'
 
   -- Language Stuff
+  use 'q60/vim-brainfuck'
   use 'neovim/nvim-lspconfig'
   -- "https://github.com/autozimu/LanguageClient-neovim#quick-start"
   --use 'autozimu/LanguageClient-neovim'
@@ -102,6 +103,6 @@ return packer.startup(function(use)
   use 'tpope/vim-eunuch'
 
   if packer_bootstrap then
-    require('packer').sync()
+    packer.sync()
   end
 end)

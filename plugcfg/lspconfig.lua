@@ -53,13 +53,13 @@ end
 
 local util = require'lspconfig/util'
 
-require'lspconfig'.ccls.setup{
+nvim_lsp.ccls.setup{
   cmd = { "ccls" },
   filetypes = { "c", "cpp", "objc", "objcpp" },
   root_dir = util.root_pattern(".ccls", "compile_commands.json", "compile_flags.txt", ".git", "src", "include"),
 }
 
-require'lspconfig'.rust_analyzer.setup{
+nvim_lsp.rust_analyzer.setup{
   on_attach=on_attach,
   root_dir = util.root_pattern("Cargo.toml", "rust-project.json", ".git", "src", "include"),
   settings = {
@@ -78,12 +78,12 @@ require'lspconfig'.rust_analyzer.setup{
   },
 }
 
-require'lspconfig'.gopls.setup{}
+nvim_lsp.gopls.setup{}
 
 local runtime_path = vim.split(package.path, ';')
 table.insert(runtime_path, "lua/?.lua")
 table.insert(runtime_path, "lua/?/init.lua")
-require'lspconfig'.sumneko_lua.setup {
+nvim_lsp.sumneko_lua.setup {
   settings = {
     Lua = {
       runtime = {
@@ -110,21 +110,21 @@ require'lspconfig'.sumneko_lua.setup {
   },
 }
 
-require'lspconfig'.gdscript.setup{}
+nvim_lsp.gdscript.setup{}
 
-require'lspconfig'.vimls.setup{--[[Code Goes Here]]}
+nvim_lsp.vimls.setup{--[[Code Goes Here]]}
 
-require'lspconfig'.verible.setup{}
+nvim_lsp.verible.setup{}
 
-require'lspconfig'.csharp_ls.setup{--[[Code Goes Here]]}
+nvim_lsp.csharp_ls.setup{--[[Code Goes Here]]}
 
---require'lspconfig'.cmake.setup{--[[Code Goes Here]]}
+--nvim_lsp.cmake.setup{--[[Code Goes Here]]}
 
-require'lspconfig'.pyright.setup{--[[Code Goes Here]]}
+nvim_lsp.pyright.setup{--[[Code Goes Here]]}
 
-require'lspconfig'.tsserver.setup{--[[Code Goes Here]]}
+nvim_lsp.tsserver.setup{--[[Code Goes Here]]}
 
-require'lspconfig'.bashls.setup{}
+nvim_lsp.bashls.setup{}
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches

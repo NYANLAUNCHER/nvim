@@ -215,6 +215,11 @@ _G.packer_plugins = {
     path = "/home/markiep/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
+  ["vim-brainfuck"] = {
+    loaded = true,
+    path = "/home/markiep/.local/share/nvim/site/pack/packer/start/vim-brainfuck",
+    url = "https://github.com/q60/vim-brainfuck"
+  },
   ["vim-ccls"] = {
     loaded = true,
     path = "/home/markiep/.local/share/nvim/site/pack/packer/start/vim-ccls",
