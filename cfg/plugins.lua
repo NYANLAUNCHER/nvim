@@ -53,7 +53,10 @@ return packer.startup(function(use)
   use 'q60/vim-brainfuck'
   use 'neovim/nvim-lspconfig'
   -- "https://github.com/autozimu/LanguageClient-neovim#quick-start"
-  --use 'autozimu/LanguageClient-neovim'
+  use {
+    'autozimu/LanguageClient-neovim',
+    ft = {'d'}
+  }
   use 'mfussenegger/nvim-jdtls'
   use 'glepnir/lspsaga.nvim'
   use {
@@ -77,11 +80,10 @@ return packer.startup(function(use)
   use 'hrsh7th/cmp-nvim-lsp'
   use 'hrsh7th/cmp-nvim-lua'
   use 'lukas-reineke/cmp-rg'
-  use {
-    'tzachar/cmp-tabnine',
-    run = './install.sh'
-  }
-  --use 'tzachar/cmp-tabnine', { 'do': './install.sh' }
+  --use {
+  --  'tzachar/cmp-tabnine',
+  --  run = './install.sh'
+  --}
 
   use 'tpope/vim-surround'
   --use 'windwp/nvim-autopairs'

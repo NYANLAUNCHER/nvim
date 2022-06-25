@@ -2,3 +2,4 @@
 - TODO:
   - create keymaps for "plugcfg/nvim-tree.lua"
   - port init.vim to init.lua
+  - create a "ping" function which flashes the row and column your cursor is at

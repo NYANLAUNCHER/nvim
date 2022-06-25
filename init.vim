@@ -3,6 +3,7 @@
 ru cfg/sets.vim
 ru cfg/keymaps.lua
 ru cfg/plugins.vim
+ru cfg/commands.vim
 ru cfg/auGroups.vim
 ru cfg/func.vim
 ru gruvbox.vim
