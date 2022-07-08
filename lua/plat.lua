@@ -1,12 +1,12 @@
+local M={}
 
 -- OS possible values: Windows, Linux, Mac, BSD, Solaris
-function getos()
+function M.getos()
   local raw_os_name = ''
 
   -- LuaJIT shortcut
   if jit and jit.os and jit.arch then
     raw_os_name = jit.os
-    raw_arch_name = jit.arch
     -- print( ("Debug jit name: %q %q"):format( raw_os_name, raw_arch_name ) )
   else
     if package.config:sub(1,1) == '\\' then
@@ -48,7 +48,7 @@ function getos()
 end
 
 -- Arch possible values: x86, x86864, powerpc, arm, mips
-function getarch()
+function M.getarch()
   local raw_arch_name = ''
   -- LuaJIT shortcut
   if jit and jit.os and jit.arch then
@@ -93,5 +93,5 @@ function getarch()
 end
 
 -- set nvim globals
-vim.g.os = getos()
-vim.g.arch = getarch()
+vim.g.os = M.getos()
+vim.g.arch = M.getarch()

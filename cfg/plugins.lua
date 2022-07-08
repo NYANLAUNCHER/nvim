@@ -72,6 +72,7 @@ return packer.startup(function(use)
   use 'plasticboy/vim-markdown'
   use 'm-pilia/vim-ccls'
   use 'habamax/vim-godot'
+  use 'https://gitlab.com/verticallity/spwn-vim'
 
    -- Cmp
   use 'hrsh7th/nvim-cmp'

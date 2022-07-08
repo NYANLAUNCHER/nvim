@@ -1,24 +1,25 @@
-vim.cmd("nnoremap <A-t> :Telescope ")
-vim.cmd([[
-nnoremap <leader>ts <Cmd>lua require('telescope.builtin').grep_string({ search = vim.fn.input("Grep For> ", "")})<CR>
-nnoremap <leader>tw <Cmd>lua require('telescope.builtin').grep_string({ search = vim.fn.expand("<cword>")})<CR>
-nnoremap <leader>tf <Cmd>lua require('telescope.builtin').find_files()<CR>
-nnoremap <leader>td <Cmd>lua require('telescope.builtin').find_files({search_dirs = vim.fn.input("Search Dir: ", "", "dir")})<CR>
-nnoremap <leader>tg <Cmd>lua require('telescope.builtin').git_files()<CR>
+require('keymap')
+local telescope = require('telescope')
 
-nnoremap <leader>tq <Cmd>lua require('telescope.builtin').quickfix()<CR>
-nnoremap <leader>tb <Cmd>lua require('telescope.builtin').buffers()<CR>
-nnoremap <leader>th <Cmd>lua require('telescope.builtin').help_tags()<CR>
-
-nnoremap <C-t>r <Cmd>lua require('telescope.builtin').lsp_references({vim.fn.expand("<cword>")})<CR>
-nnoremap <C-t>R <Cmd>lua require('telescope.builtin').lsp_references({vim.fn.expand("kcWORD>")})<CR>
-nnoremap <C-t>a <Cmd>lua require('telescope.builtin').lsp_code_actions<CR>
-nnoremap <C-t>d <Cmd>lua require('telescope.builtin').lsp_document_diagnostics<CR>
-]])
+local keymaps = {
+{'n', '<A-t>', ':Telescope '},
+{'n', '<leader>ts', '<Cmd>lua require("telescope.builtin").grep_string({ search = vim.fn.input("Grep For> ", "") })<CR>'},
+{'n', '<leader>tw', '<Cmd>lua require("telescope.builtin").grep_string({ search = vim.fn.expand("<cword>") })<CR>'},
+{'n', '<leader>tf', '<Cmd>lua require("telescope.builtin").find_files()<CR>'},
+{'n', '<leader>td', '<Cmd>lua require("telescope.builtin").find_files({search_dirs = vim.fn.input("Search Dir: ", "", "dir")})<CR>'},
+{'n', '<leader>tg', '<Cmd>lua require("telescope.builtin").git_files()<CR>'},
+{'n', '<leader>tq', '<Cmd>lua require("telescope.builtin").quickfix()<CR>'},
+{'n', '<leader>tb', '<Cmd>lua require("telescope.builtin").buffers()<CR>'},
+{'n', '<leader>th', '<Cmd>lua require("telescope.builtin").help_tags()<CR>'},
+{'n', '<C-t>r', '<Cmd>lua require("telescope.builtin").lsp_references({vim.fn.expand("<cword>")})<CR>'},
+{'n', '<C-t>R', '<Cmd>lua require("telescope.builtin").lsp_references({vim.fn.expand("kcWORD>")})<CR>'},
+{'n', '<C-t>a', '<Cmd>lua require("telescope.builtin").lsp_code_actions<CR>'},
+{'n', '<C-t>d', '<Cmd>lua require("telescope.builtin").lsp_document_diagnostics<CR>'},
+}
+map(keymaps)
 
 -- Base Config
-local telescope = require('telescope')
-telescope.setup{
+telescope.setup {
   defaults = {
     vimgrep_arguments = {
       'rg',
@@ -88,4 +89,4 @@ telescope.setup {
   }
 }
 
---require('telescope').load_extension('fzy_native')
+--require'telescope'.load_extension('fzy_native')

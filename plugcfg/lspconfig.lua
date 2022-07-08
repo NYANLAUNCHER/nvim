@@ -53,12 +53,21 @@ end
 
 local util = require'lspconfig/util'
 
+-- {{{ Cpp setup
 nvim_lsp.ccls.setup{
   cmd = { "ccls" },
+  single_file_support = true,
   filetypes = { "c", "cpp", "objc", "objcpp" },
   root_dir = util.root_pattern(".ccls", "compile_commands.json", "compile_flags.txt", ".git", "src", "include"),
-}
+  init_options = {-- source = "https://github.com/MaskRay/ccls/wiki/Customization#initialization-options"
+    compilationDatabaseDirectory = "build",
+    cache = {
+      directory = "~/.cache/ccls"
+    }
+  }
+}-- }}
 
+-- {{{ Rust setup
 nvim_lsp.rust_analyzer.setup{
   on_attach=on_attach,
   root_dir = util.root_pattern("Cargo.toml", "rust-project.json", ".git", "src", "include"),
@@ -76,10 +85,9 @@ nvim_lsp.rust_analyzer.setup{
       },
     },
   },
-}
+}-- }}}
 
-nvim_lsp.gopls.setup{}
-
+-- {{{ Lua setup
 local runtime_path = vim.split(package.path, ';')
 table.insert(runtime_path, "lua/?.lua")
 table.insert(runtime_path, "lua/?/init.lua")
@@ -108,21 +116,35 @@ nvim_lsp.sumneko_lua.setup {
       },
     },
   },
-}
+}-- }}}
+
+nvim_lsp.vimls.setup{}
 
 nvim_lsp.gdscript.setup{}
 
-nvim_lsp.vimls.setup{--[[Code Goes Here]]}
+-- {{{ Html setup
+-- Enable (broadcasting) snippet capability for completion
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+nvim_lsp.html.setup {
+  capabilities = capabilities,
+}-- }}}
+
+nvim_lsp.gopls.setup{}
 
 nvim_lsp.verible.setup{}
 
-nvim_lsp.csharp_ls.setup{--[[Code Goes Here]]}
+nvim_lsp.csharp_ls.setup{}
 
---nvim_lsp.cmake.setup{--[[Code Goes Here]]}
+--nvim_lsp.cmake.setup{}
 
-nvim_lsp.pyright.setup{--[[Code Goes Here]]}
+nvim_lsp.pyright.setup{}
 
-nvim_lsp.tsserver.setup{--[[Code Goes Here]]}
+vim.cmd([[autocmd BufWritePre *.tsx,*.ts,*.jsx,*.js EslintFixAll]])
+nvim_lsp.eslint.setup{}
+
+nvim_lsp.tsserver.setup{}
 
 nvim_lsp.bashls.setup{}
 
