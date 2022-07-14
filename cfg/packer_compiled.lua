@@ -25,7 +25,7 @@ local no_errors, error_msg = pcall(function()
   else
     time = function(chunk, start) end
   end
-
+  
 local function save_profiles(threshold)
   local sorted_times = {}
   for chunk_name, time_taken in pairs(profile_info) do
@@ -311,6 +311,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/markiep/.local/share/nvim/site/pack/packer/start/vim-surround",
     url = "https://github.com/tpope/vim-surround"
+  },
+  vimtex = {
+    loaded = true,
+    path = "/home/markiep/.local/share/nvim/site/pack/packer/start/vimtex",
+    url = "https://github.com/lervag/vimtex"
   }
 }
 

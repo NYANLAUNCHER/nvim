@@ -1,3 +1,3 @@
 
 " Sets
-setlocal sts=2 ts=2 sw=2
+setl sts=4 ts=4 sw=4

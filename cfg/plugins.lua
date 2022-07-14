@@ -50,10 +50,8 @@ return packer.startup(function(use)
   use 'unblevable/quick-scope'
 
   -- Language Stuff
-  use 'q60/vim-brainfuck'
   use 'neovim/nvim-lspconfig'
-  -- "https://github.com/autozimu/LanguageClient-neovim#quick-start"
-  use {
+  use {-- see: "https://github.com/autozimu/LanguageClient-neovim#quick-start"
     'autozimu/LanguageClient-neovim',
     ft = {'d'}
   }
@@ -68,10 +66,12 @@ return packer.startup(function(use)
     --run = ':TSUpdate'
   }
   use 'fladson/vim-kitty'
-  use 'dhruvasagar/vim-dotoo'
-  use 'plasticboy/vim-markdown'
   use 'm-pilia/vim-ccls'
   use 'habamax/vim-godot'
+  use 'lervag/vimtex'
+  use 'q60/vim-brainfuck'
+  use 'dhruvasagar/vim-dotoo'
+  use 'plasticboy/vim-markdown'
   use 'https://gitlab.com/verticallity/spwn-vim'
 
    -- Cmp
