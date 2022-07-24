@@ -66,7 +66,7 @@ return packer.startup(function(use)
     --run = ':TSUpdate'
   }
   use 'fladson/vim-kitty'
-  use 'm-pilia/vim-ccls'
+  --use 'm-pilia/vim-ccls'
   use 'habamax/vim-godot'
   use 'lervag/vimtex'
   use 'q60/vim-brainfuck'

@@ -227,11 +227,6 @@ _G.packer_plugins = {
     path = "/home/markiep/.local/share/nvim/site/pack/packer/start/vim-brainfuck",
     url = "https://github.com/q60/vim-brainfuck"
   },
-  ["vim-ccls"] = {
-    loaded = true,
-    path = "/home/markiep/.local/share/nvim/site/pack/packer/start/vim-ccls",
-    url = "https://github.com/m-pilia/vim-ccls"
-  },
   ["vim-closetag"] = {
     loaded = true,
     path = "/home/markiep/.local/share/nvim/site/pack/packer/start/vim-closetag",

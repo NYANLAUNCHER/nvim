@@ -1,5 +1,7 @@
 
 - TODO:
-  - create keymaps for "plugcfg/nvim-tree.lua"
+  - configure vimtex
+  - configure nvim-tree
+  - manage all keybinds
+  - create a "PingCursor()" function which flashes the row and column your cursor is at
   - port init.vim to init.lua
-  - create a "ping" function which flashes the row and column your cursor is at

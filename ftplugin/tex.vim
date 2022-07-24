@@ -1,17 +1,18 @@
 
 filetype plugin indent on
 
-unmap <S-k>
 nnoremap <S-k> <C-y>
 
-let g:vimtex_view_method = "zathura"
-
+" Set the aux and output dirs
 let g:latex_auxdir = ".latex_aux"
+let g:latex_outdir = ".latex_out"
+
+let g:vimtex_view_method = "zathura"
 
 let g:vimtex_syntax_conceal_disable = 1
 
 let g:vimtex_compiler_latexmk = {
-    \ 'build_dir' : '',
+    \ 'build_dir' : g:latex_outdir,
     \ 'callback' : 1,
     \ 'continuous' : 1,
     \ 'executable' : 'latexmk',

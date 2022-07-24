@@ -18,7 +18,6 @@ augroup disable_indentline
     autocmd!
     au FileType help     let g:indentLine_enabled=0
     au FileType text     let g:indentLine_enabled=0
-    au FileType notes    let g:indentLine_enabled=0
     au FileType startify let g:indentLine_enabled=0
     au FileType markdown let g:indentLine_enabled=0
 augroup END
