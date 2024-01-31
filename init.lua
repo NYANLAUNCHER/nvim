@@ -1,16 +1,27 @@
+local vim=vim
 -- Stand-alone neovim config file with all my defaults
 --- designed to be copied to the global configs
 
 --TODO:
 -- fix sys clipboard
 -- add readline keybindings for insert mode
--- fix toggleWindowMaximized
+--- <C-u> = deletes to where you entered insert mode (if on the same line),
+---- otherwise, it deletes to beginning of line
+--- <C-a> = moves to where <C-u> deletes
+--- <C-e> = move to end of line
+--- <C-h> = backspace
+--- <C-l> = add space or move forward a char
+--- <C-j> = add newline or move down a line
+--- <C-f> = jump to end of word
+--- <C-k> = delete to end of line
+--- <C-w> = delete last word
 -- remove highlights after search
 -- add better pair matching functionality
+--- include multi-line comment pairs
 -- add better support for lists
 
 -- Language Configs: (in order)
---- Lua, Cpp, C, Rust, D
+--- Lua, C, Rust, Zig
 
 
 -- Settings: (:help lua-guide-options)
@@ -21,7 +32,7 @@ vim.opt.errorbells=true
 vim.opt.timeoutlen=800
 vim.opt.splitbelow=true
 vim.opt.splitright=true
-vim.opt.mouse=''
+vim.opt.mouse='nv'
 
 vim.opt.virtualedit:append('block')
 vim.opt.scrolloff=8
@@ -65,9 +76,6 @@ vim.opt.undofile=true
 -- set the leader key
 vim.g.leader=' '
 
--- ; to enter cmd mode
-vim.keymap.set({'n', 'v'}, ';', ':')
-
 -- ESC terminal mode
 vim.keymap.set('t', '<C-[>', '<C-\\><C-n>')
 
@@ -81,8 +89,14 @@ vim.keymap.set('n', '<C-j>', '<C-w>j')
 vim.keymap.set('n', '<C-k>', '<C-w>k')
 vim.keymap.set('n', '<C-l>', '<C-w>l')
 
--- <C-w>m toggle window maximized
-vim.keymap.set('n', '<C-w>m', function() toggleWindowMaximized() end, {silent = true})
+-- Resize Windows
+vim.keymap.set('n', '<C-Up>', ':resize -2<CR>')
+vim.keymap.set('n', '<C-Down>', ':resize +2<CR>')
+vim.keymap.set('n', '<C-Left>', ':vertical resize -2<CR>')
+vim.keymap.set('n', '<C-Right>', ':vertical resize +2<CR>')
+
+-- Toggle Window Maximized
+vim.keymap.set('n', '<C-w>m', function() ToggleWindowMaximized() end, {silent = true})
 
 -- Append Line
 vim.keymap.set('n', ',o', 'o<ESC>')
@@ -110,16 +124,18 @@ com! Reload source $MYVIMRC
 
 -- augroup trimWhitespace
 
--- pingCursor
-
--- toggleWindowMaximized
-function toggleWindowMaximized()
-    vim.cmd(':echo "window maximized"')
+function PingCursor()
 end
 
--- augroup saveTODO = save a list of all the "TODO:" strings that are written in comments
----  works in conjungtion with ~/src/local/scripts/TODO.sh
-
--- augroup saveManualFolds
--- toggleFolds = toggle all the folds in the buffer
+local windowMaximized = 0
+function ToggleWindowMaximized()
+  if windowMaximized == 0 then
+    vim.cmd('vertical resize')
+    vim.cmd('resize')
+    windowMaximized = 1
+  else
+    vim.cmd('exe "normal \\<C-w>="')
+    windowMaximized = 0
+  end
+end
 
