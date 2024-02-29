@@ -12,7 +12,6 @@ syn case ignore
 
 
 " Syntax
-
 syntax match gcFileBlock /^%$/
 syntax match gcProgramID /\(o[0-9][0-9]*\|:[0-9][0-9]*\)/
 syntax match gcConstant /\(\-\=[.0-9]*\)/
@@ -58,9 +57,7 @@ syntax match gcTool /[hdt][0-9][0-9]*/
 syntax match gcBlockSkip /^\/.*/
 
 
-
 " Highlighting
-
 hi gcFileBlock ctermfg=blue cterm=bold
 hi gcProgramID ctermfg=Magenta cterm=bold
 
@@ -77,7 +74,7 @@ hi gcZAxisScaled ctermfg=darkblue
 hi link gcFeedScaled SpecialChar
 
 hi gcSpecials ctermfg=brown
-hi gcBlockSkip ctermfg=white cterm=bold
+hi gcBlockSkip ctermfg=grey cterm=bold
 
 hi link gcTool SpecialChar
 

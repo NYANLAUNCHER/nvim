@@ -9,5 +9,13 @@ vim.filetype.add({
     frag = 'glsl', -- fragment shader
     comp = 'glsl', -- compute shader
     glsl = 'glsl',
+    -- GCode
+    gcode = 'gcode',
+    ngc = 'gcode',
+    nc = 'gcode',
+    cnc = 'gcode',
+    tap = 'gcode',
+    -- Javascript (sucks)
+    cps = 'javascript',
   },
 })

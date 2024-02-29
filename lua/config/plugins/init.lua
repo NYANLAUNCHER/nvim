@@ -23,32 +23,29 @@ return {
       })
     end
   },
-  -- File Finder
+  -- File Search
   {
     'nvim-telescope/telescope.nvim', tag = '0.1.4',
     dependencies = {'nvim-lua/plenary.nvim'}
   },
   'camnw/lf-vim',
+  {
+    'nvim-tree/nvim-tree.lua', config = function()
+      vim.g.loaded_netrw = 1
+      vim.g.loaded_netrwPlugin = 1
+      vim.opt.termguicolors = true
+      require('nvim-tree').setup({
+        view = {
+          width = 30,
+        },
+        filters = {
+          --git_ignored = true,
+        },
+      })
+    end
+  },
   -- Language Stuff
   'HiPhish/info.vim',
   'lluchs/vim-wren',
-  {
-    'mfussenegger/nvim-dap', main = 'dap', config = function()
-      local dap = require('dap')
-      dap.adapters.gdb = {
-        type = 'executable',
-        command = 'gdb',
-        args = { '-i', 'dap' }
-      }
-      dap.configurations.c = {
-        name = 'Launch',
-        type = 'gdb',
-        request = 'launch',
-        program = function()
-          return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
-        end,
-        cwd = '${workspaceFolder}',
-      }
-    end
-  }
+  'fladson/vim-kitty',
 }
