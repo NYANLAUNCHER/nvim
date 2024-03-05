@@ -45,6 +45,7 @@ return {
     end
   },
   -- Language Stuff
+  'mattn/emmet-vim',
   'HiPhish/info.vim',
   'lluchs/vim-wren',
   'fladson/vim-kitty',

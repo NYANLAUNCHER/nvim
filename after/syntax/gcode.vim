@@ -1,106 +1,60 @@
 " Vim syntax file
-" Language: RS274/ngc
-" Original Creator: Gary Fixler <gfixler.emc@gmail.com>
-" Modifications: Greg Jurman <jurman.greg@gmail.com>
-" Last Change: 2014 Apr 15
+" Language: NC 
+" Maintainer: Dave Eno <daveeno@gmail.com>
+" Last Change: 2014 April 03
 
+" Quit when a (custom syntax file was already loaded
 if exists("b:current_syntax")
     finish
 endif
 
 syn case ignore
 
+syn  match ncComment /(.*)/ contains=ncTodo
+syn  keyword ncGCodes g01 g02 g03 g04 g1 g2 g3 g4 g10 g17 g18 g19 g20 g21 g28 g30 g33 g33.1 g38.2 g38.x g40 g41 g41.1 g42 g42.1 g43 g43.1 g49 g53 g54 g55 g56 g57 g58 g59 g59.1 g59.2 g59.3 g61 g61.1 g64 g76 g80 g81 g82 g83 g84 g85 g86 g87 g88 g89 g90 g91 g92 g92.1 g92.2 g92.3 g93 g94 g95 g96 g97 g98 g99
+syn  keyword ncMCodes M00 M01 M02 M03 M04 M05 M06 M07 M08 M09 M0 M1 M2 M3 M4 M5 M6 M7 M8 M9 M30 M48 M49 M50 M51 M52 M53 M60 M62 M63 M64 M65 M66
 
-" Syntax
-syntax match gcFileBlock /^%$/
-syntax match gcProgramID /\(o[0-9][0-9]*\|:[0-9][0-9]*\)/
-syntax match gcConstant /\(\-\=[.0-9]*\)/
-syntax keyword gcConditional if else endif
-syntax keyword gcRepeat do do1 do2 do3 while endwhile break continue end end1 end2 end3 goto
-syntax keyword gcFunction sub endsub call return
-syntax keyword gcOperator EQ NE GT GE LT LE ABS ACOS ASIN ATAN COS EXP FIX FUP LN ROUND SIN SQRT TAN MOD AND OR
-syntax match gcOperatorPunc "[%\-+*/\[\]]"
-syntax match gcIdentifier /#<*[A-Z_0-9]*>*/
-syntax keyword gcTodo TODO FIXME XXX contained
-syntax match gcComment /([^)]*)/ contains=gcTodo
+syntax match ncXAxis "\<[XY]-\?\d\+\>"
+syntax match ncXAxis "\<[XY]-\?\.\d\+\>"
+syntax match ncXAxis "\<[XY]-\?\d\+\."
+syntax match ncXAxis "\<[XY]-\?\d\+\.\d\+\>"
 
-"TODO: use [] to encase vars
-" make contents blue and [] SpecialChar
-syntax match gcVar /(\[.*?\])/
+syntax match ncZAxis "\<Z-\?\d\+\>"
+syntax match ncZAxis "\<Z-\?\.\d\+\>"
+syntax match ncZAxis "\<Z-\?\d\+\."
+syntax match ncZAxis "\<Z-\?\d\+\.\d\+\>"
 
-syntax match gcMessage /(\s*MSG\s*,.*)/ contains=gcIdentifier
-syntax match gcLogOpen /(\s*LOGOPEN\s*,.*)/
-syntax match gcLogClose /(\s*LOGCLOSE\s*)/
-syntax match gcLog /(\s*LOG\s*,.*)/ contains=gcIdentifier
-syntax match gcPrint /(\s*PRINT\s*,.*)/ contains=gcIdentifier
-syntax match gcDebug /(\s*DEBUG\s*,.*)/ contains=gcIdentifier
-syntax match gcLineNumbers /\(n[0-9][0-9]*\)/
+syntax match ncAAxis "\<[ABC]-\?\d\+\>"
+syntax match ncAAxis "\<[ABC]-\?\.\d\+\>"
+syntax match ncAAxis "\<[ABC]-\?\d\+\."
+syntax match ncAAxis "\<[ABC]-\?\d\+\.\d\+\>"
 
-syntax match gcGCodes /\s*\(g[0-9][0-9]*\)/
-syntax match gcGCodesAlt /\s*\(g[0-9][0-9]*\.[0-9]\)/
-syntax match gcMCodes /\s*\(m[0-9][0-9]*\)/
+syntax match ncIAxis "\<[IJKR]-\?\d\+\>"
+syntax match ncIAxis "\<[IJKR]-\?\.\d\+\>"
+syntax match ncIAxis "\<[IJKR]-\?\d\+\."
+syntax match ncIAxis "\<[IJKR]-\?\d\+\.\d\+\>"
 
-syntax match gcAxes /\s*\([abc][-#]*[0-9.][.]*[0-9]*\)/ contains=gcIdentifier
+syntax match ncRapid "\<G\(0\+\)\>"
 
-syntax match gcXAxisScaled /\s*\([xui] *[-+#]\?[0-9][0-9]*\)/ contains=gcIdentifier
-syntax match gcYAxisScaled /\s*\([yvj] *[-+#]\?[0-9][0-9]*\)/ contains=gcIdentifier
-syntax match gcZAxisScaled /\s*\([zwk] *[-+#]\?[0-9][0-9]*\)/ contains=gcIdentifier
-syntax match gcFeedScaled /\s*\(f *#\?[0-9][0-9]*\)/ contains=gcIdentifier
+syntax match ncFeed "\<F-\?\d\+\>"
+syntax match ncFeed "\<F-\?\.\d\+\>"
+syntax match ncFeed "\<F-\?\d\+\."
+syntax match ncFeed "\<F-\?\d\+\.\d\+\>"
 
-syntax match gcXAxis /\s*\([xui] *[-+#]\?[0-9]*\.[0-9]*\)/ contains=gcIdentifier
-syntax match gcYAxis /\s*\([yvj] *[-+#]\?[0-9]*\.[0-9]*\)/ contains=gcIdentifier
-syntax match gcZAxis /\s*\([zwk] *[-+#]\?[0-9]*\.[0-9]*\)/ contains=gcIdentifier
-syntax match gcFeed /\s*\([f] *[#]\?[0-9]*\.[0-9]*\)/ contains=gcIdentifier
+syntax match ncTool "\<T\d\+\>"
 
-syntax match gcSpecials /\s*\(,[c][#-]*[0-9.][.]*[0-9]*\|[relpqs][-#]*[0-9.][.]*[0-9]*\)\s*/ contains=gcIdentifier
-syntax match gcTool /[hdt][0-9][0-9]*/
-syntax match gcBlockSkip /^\/.*/
+hi def link ncComment Comment
+hi def link ncGCodes MoreMsg
+hi def link ncMCodes MoreMsg
+hi def link ncXAxis Keyword
+hi def link ncYAxis Keyword
+hi def link ncZAxis WarningMsg
+hi def link ncAAxis VimString
 
+hi def link ncRapid WarningMsg
+hi def link ncIAxis Identifier
+hi def link ncSpecials SpecialChar
+hi def link ncFeed SpecialChar
+hi def link ncTool Define
 
-" Highlighting
-hi gcFileBlock ctermfg=blue cterm=bold
-hi gcProgramID ctermfg=Magenta cterm=bold
-
-hi gcAxes ctermfg=lightgreen
-
-hi gcXAxis ctermfg=darkblue
-hi gcYAxis ctermfg=darkblue
-hi gcZAxis ctermfg=darkblue
-hi link gcFeed SpecialChar
-
-hi gcXAxisScaled ctermfg=darkblue
-hi gcYAxisScaled ctermfg=darkblue
-hi gcZAxisScaled ctermfg=darkblue
-hi link gcFeedScaled SpecialChar
-
-hi gcSpecials ctermfg=brown
-hi gcBlockSkip ctermfg=grey cterm=bold
-
-hi link gcTool SpecialChar
-
-hi link gcConstant Constant
-hi link gcConditional Conditional
-hi link gcRepeat Repeat
-hi link gcFunction Function
-hi link gcOperator Operator
-hi link gcOperatorPunc Operator
-hi link gcIdentifier Identifier
-hi link gcLabel Label
-hi link gcLineNumbers LineNr
-hi link gcTodo Todo
-
-hi link gcComment Comment
-
-hi link gcVar SpecialComment
-
-hi link gcMessage SpecialComment
-hi link gcLogOpen SpecialComment
-hi link gcLogClose SpecialComment
-hi link gcLog SpecialComment
-hi link gcPrint SpecialComment
-hi link gcDebug Debug
-hi link gcGCodes Keyword
-hi link gcGCodesAlt Keyword
-hi link gcMCodes Keyword
-
-let b:current_syntax = "gc"
+let b:current_syntax = "nc"

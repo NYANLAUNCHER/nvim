@@ -35,7 +35,7 @@ vim.opt.number=true
 vim.opt.wrap=false
 vim.opt.signcolumn='yes'
 vim.opt.foldcolumn='auto'
-vim.opt.foldmethod='manual'
+vim.opt.foldmethod='marker'
 vim.opt.colorcolumn='100'
 vim.opt.cmdheight=2
 
