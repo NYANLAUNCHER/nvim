@@ -10,6 +10,7 @@ require'lspconfig'.ccls.setup {
   }
 }
 
+--[[
 require'dap'.configurations.c = {
   {
     name = "Launch",
@@ -22,3 +23,4 @@ require'dap'.configurations.c = {
     stopAtBeginningOfMainSubprogram = false,
   },
 }
+--]]

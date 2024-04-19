@@ -19,6 +19,7 @@ local vim=vim
 
 -- Settings: (:help lua-guide-options)
 vim.cmd('filetype plugin indent on')
+vim.cmd('packadd! matchit')
 vim.opt.syntax='on'
 vim.opt.shortmess='a'
 vim.opt.errorbells=true

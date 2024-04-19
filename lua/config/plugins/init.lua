@@ -34,7 +34,7 @@ return {
       vim.g.loaded_netrw = 1
       vim.g.loaded_netrwPlugin = 1
       vim.opt.termguicolors = true
-      require('nvim-tree').setup({
+      require'nvim-tree'.setup({
         view = {
           width = 30,
         },
@@ -45,8 +45,9 @@ return {
     end
   },
   -- Language Stuff
-  'mattn/emmet-vim',
-  'HiPhish/info.vim',
+  'prettier/vim-prettier',
+  'windwp/nvim-ts-autotag',
   'lluchs/vim-wren',
   'fladson/vim-kitty',
+  'HiPhish/info.vim',
 }
