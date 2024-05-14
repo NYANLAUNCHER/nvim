@@ -12,16 +12,11 @@ return {
   config = function()
     local cmp = require('cmp')
     -- TODO:
-    -- only use <C-n> & <C-p> to start/navigate completion
-    -- completion will automatically be confirmed on any other key press
+    -- only use <C-n> & <C-p> to request & navigate completion menu
+    -- completion will automatically finish when you start typing again
     -- <C-[> or <ESC> will abort completion
     -- when typing ending pair, it'll jump to it (if it exists) when,
-    --- it is the next char or comes after newline char (& the indent for the next line)
-    --[[
-    -- void main() {
-    --   printf("hello world");| < b4 typing '}'
-    -- }| < after typing '}'
-    --]]
+    --- it is the next char or comes after (only) whitespace
     cmp.setup {
       mapping = cmp.mapping.preset.insert({
         ['<C-b>'] = cmp.mapping.scroll_docs(-4),
