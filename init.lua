@@ -1,6 +1,5 @@
 local vim=vim
 -- Stand-alone neovim config file with all my defaults
---- designed to be copied to the global configs
 
 --TODO:
 -- fix "$nv/after/syntax/gcode.vim"
@@ -16,8 +15,8 @@ local vim=vim
 -- Language Configs: (in order)
 --- Lua, C, Rust, Zig
 
-
--- Settings: (:help lua-guide-options)
+-- Settings: {{{
+-- :help lua-guide-options
 vim.cmd('filetype plugin indent on')
 vim.cmd('packadd! matchit')
 vim.opt.syntax='on'
@@ -64,9 +63,9 @@ vim.opt.backup=false
 vim.opt.writebackup=false
 vim.opt.undodir=vim.fn.stdpath('data') .. '/undo'
 vim.opt.undofile=true
+-- }}}
 
-
--- Keymaps:
+-- Keymaps: {{{
 -- set the leader key
 vim.g.leader=' '
 
@@ -123,9 +122,9 @@ vim.keymap.set('n', '<leader>Y', '"+yg_')
 vim.keymap.set({'n', 'v'}, '<leader>y', '"+y')
 vim.keymap.set({'n', 'v'}, '<leader>p', '"+p')
 vim.keymap.set({'n', 'v'}, '<leader>P', '"+P')
+-- }}}
 
-
--- Commands
+-- Commands: {{{
 vim.cmd([[
 com! Q q!
 com! Qa qa!
@@ -152,4 +151,37 @@ function ToggleWindowMaximized()
     windowMaximized = 0
   end
 end
+-- }}}
 
+-- Detect Filetypes: {{{
+-- see: "https://github.com/neovim/neovim/pull/16600#issuecomment-990409210"
+vim.filetype.add({
+  filename = {
+    ['.envrc'] = "sh",
+  },
+  extension = {
+    -- GLSL
+    vert = "glsl", -- vertex shader
+    tesc = "glsl", -- tessellation control shader
+    tese = "glsl", -- tessellation evaluation shader
+    geom = "glsl", -- geometry shader
+    frag = "glsl", -- fragment shader
+    comp = "glsl", -- compute shader
+    glsl = "glsl",
+    -- GCode
+    gcode = "gcode",
+    ngc = "gcode",
+    nc = "gcode",
+    cnc = "gcode",
+    tap = "gcode",
+    -- Zig
+    zon = "zig",
+    -- Javascript (sucks)
+    cps = "javascript",-- fusion 360 post processor
+    -- Misc.
+    buildconf = "make",
+  },
+  pattern = {
+  },
+})
+-- }}}
